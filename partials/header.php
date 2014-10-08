@@ -4,7 +4,7 @@
 			<img src="images/logo.png" alt="骏马留学"></img>
 		</div>
 		<div class="title_div">
-			骏马留学&nbsp;&nbsp;完美造梦
+			骏马留学&nbsp;<span>Dreamer</span>&nbsp;完美造梦
 		</div>
 		<div class="menu_div">
 			<ul>

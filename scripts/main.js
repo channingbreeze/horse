@@ -1,5 +1,38 @@
 (function($) {
 	
+	// 加载地图
+	map = new VEMap('myMap');
+	map.LoadMap(new VELatLong(0, 0), // center
+		1, // zoom level
+		VEMapStyle.Road, // map style
+		false, // fixed map
+		VEMapMode.Mode2D, // map mode
+		false, // show map mode switch
+		0, // tile buffer
+		null // options
+	);
+	map.HideDashboard();
+	
+	// 加载地图图钉
+	$.ajax({
+		url : 'inter/getPins.php',
+		dataType : 'json',
+		success : function(data){
+			
+			for(i in data) {
+			
+				var myPolygon = new VEShape(VEShapeType.Pushpin, new VELatLong(data[i].longitude, data[i].latitude));
+				map.AddShape(myPolygon);
+				myPolygon.SetPhotoURL(window.location.href + "/../images/" + data[i].image_url);
+				myPolygon.SetTitle(data[i].title);
+				myPolygon.SetDescription(data[i].content);
+				myPolygon.SetCustomIcon("images/pin.png");
+				
+			}
+		}
+	
+	});
+	
 	// 免费修改文书对话框打开
 	$('#freeModify').on('click', function(){
 
@@ -54,8 +87,43 @@
 	// 输入框获得焦点，弹出下拉选项
 	$('#searchInput').on('focus', function(){
 	
-		$('#schools').css('display', 'block');
+		$.ajax({
+			url : 'inter/getSchools.php',
+			method : 'post',
+			data : 'info=' + $(this).val(),
+			dataType : 'json',
+			success : function(data) {
+				var source = $('#schools-template').html();
+				var template = Handlebars.compile(source);
+				var html = template(data);
+				$('#schools').html('').append(html);
+				$('#schools').css('display', 'block');
+			}
+		});
 	
+	});
+	
+	var timer = null;
+	var fire = function(){
+		$.ajax({
+			url : 'inter/getSchools.php',
+			method : 'post',
+			data : 'info=' + $('#searchInput').val(),
+			dataType : 'json',
+			success : function(data) {
+				var source = $('#schools-template').html();
+				var template = Handlebars.compile(source);
+				var html = template(data);
+				$('#schools').html('').append(html);
+				$('#schools').css('display', 'block');
+			}
+		});
+	};
+	$('#searchInput').on('keydown', function(){
+		if(timer) {
+			clearTimeout(timer);
+		}
+		timer = setTimeout(fire, 500);
 	});
 	
 	// 输入框失去焦点，隐藏下拉选项
@@ -66,18 +134,72 @@
 	});
 	
 	// 选择一所学校
-	$('#schools').find('li').on('mousedown', function(){
-	
+	$(document).on('mousedown', 'li', function(){
+		
 		$span = $(this).find('span');
 		$('#searchInput').val($span.html());
 	
+		$.ajax({
+			url : 'inter/getPinBySchoolId.php',
+			method : 'post',
+			data : 'id=' + $span.data().dir,
+			dataType : 'json',
+			success : function(data) {
+				map.SetCenterAndZoom(new VELatLong(data[0].longitude, data[0].latitude), 15);
+			}
+		});
+		
 	});
-	
-	// 点击提交
-	$('input[type="submit"]').on('click', function(e){
+
+	// 免费提交
+	$("#freeSubmit").on('click', function(e){
+		
+		e.preventDefault();
+		$('#ajaxFile').ajaxfileupload({
+			action : 'inter/submitOrder.php',
+			params : $("#freeSubmit").closest('form').serializeJson(),
+			onStart : function(){
+			},
+			onComplete : function(data) {
+				console.log(data);
+				if(data == "ok") {
+					$('#freeDialog').css('display', 'none');
+					$('#back').css('display', 'none');
+					alert('提交成功！');
+				} else {
+					alert('提交失败，请重试！\n' + (data.message?data.message:''));
+				}
+			},
+			onCancel:function(){
+				alert('提交失败，请重试！');
+			},
+			valid_extensions:['doc','docx']
+		});
+		
+	});
+
+	// 付费提交
+	$('.chargeSubmit').on('click', function(e){
 	
 		e.preventDefault();
-		console.log($(this).closest('form').serialize());
+		$.ajax({
+			url : 'inter/submitOrder.php',
+			method : 'post',
+			data : $(this).closest('form').serialize(),
+			success : function(data) {
+				if(data == "ok") {
+					$('#VIPDialog').css('display', 'none');
+					$('#AllDialog').css('display', 'none');
+					$('#back').css('display', 'none');
+					alert('提交成功！');
+				} else {
+					alert('提交失败，请重试！');
+				}
+			},
+			error : function() {
+				alert('提交失败，请重试！');
+			}
+		});
 	
 	});
 	

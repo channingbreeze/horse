@@ -1,0 +1,22 @@
+.button_div {
+	margin : 30px auto;
+	width : 800px;
+	height : 50px;
+}
+
+.button_div button {
+	width : 80px;
+	height : 40px;
+	margin-top : 5px;
+	margin-left : 20px;
+	background-color : #F8D543;
+	font-size : 15px;
+	color : blue;
+}
+
+.panel_div {
+	width : 1000px;
+	height : 450px;
+	margin : 40px auto;
+	border : 1px solid blue;
+}

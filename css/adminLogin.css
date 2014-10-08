@@ -1,0 +1,47 @@
+.login_div {
+	width : 600px;
+	height : 400px;
+	margin : 100px auto;
+	text-align : center;
+}
+
+.tips {
+	color : red;
+	margin-top : 30px;
+}
+
+.login_div input[type=text] {
+	width : 400px;
+	height : 50px;
+	margin-top : 30px;
+	font-size : 30px;
+	border : 3px solid red;
+	border-radius : 10px;
+	outline : none;
+}
+
+.login_div input[type=password] {
+	width : 400px;
+	height : 50px;
+	margin-top : 30px;
+	font-size : 30px;
+	border : 3px solid red;
+	border-radius : 10px;
+	outline : none;
+}
+
+.login_div input[type=submit] {
+	width : 200px;
+	height : 50px;
+	color : #0483EB;
+	background-color : #DDDDDD;
+	margin-top : 30px;
+	font-size : 30px;
+	border-radius : 10px;
+	outline : none;
+}
+
+.login_div input[type=submit]:active {
+	color : #0A4879;
+	background-color : #B4B4B4;
+}

@@ -1,77 +1,4 @@
-* {
-	margin : 0px;
-	padding : 0px;
-}
-
-body {
-	background-color : #F8F8F8;
-}
-
-/************top div start*************/
-.top_div {
-	width : 100%;
-	background-color : #D7E1EE;
-	height : 50px;
-}
-
-.inner_top_div {
-	margin : 0px auto;
-	width : 1000px;
-	height : 50px;
-}
-
-.image_div {
-	float : left;
-	height : 50px;
-}
-
-.title_div {
-	float : left;
-	font-size : 30px;
-	margin-left : 100px;
-	margin-top : 5px;
-	font-family : 'DFKai-SB';
-}
-
-.menu_div {
-	float : right;
-	height : 100%;
-}
-
-.menu_div li {
-	margin-right : 10px;
-	text-align : center;
-	width : 80px;
-	height : 50px;
-	float : left;
-	list-style-type : none;
-}
-
-.menu_div li:hover {
-	background-color : #FBE03D;
-}
-
-.menu_div a {
-	font-size : 20px;
-	color : #000000;
-	display : block;
-	line-height : 50px;
-	text-decoration : none;
-	font-weight : bold;
-}
-
-.menu_div a:hover {
-	color : #5187BF;
-}
-/************top div end*************/
-
 /************main div start*************/
-.main_content_div {
-	margin : 20px auto;
-	width : 1000px;
-	height : 570px;
-}
-
 .arrows_div {
 	position : relative;
 }
@@ -86,11 +13,11 @@ body {
 
 .ul_wrap {
 	margin-left : 0px;
-	width : 2000px;
+	width : 1000px;
 	height : 550px;
 }
 
-.ul_wrap li {
+.case_li {
 	list-style-type : none;
 	width : 300px;
 	height : 200px;
@@ -100,10 +27,47 @@ body {
 	margin-left : 20px;
 }
 
+.case_div {
+	width : 250px;
+	margin : 10px auto;
+}
+
+.name_span {
+	font-weight : bold;
+}
+
+.name_span {
+	font-weight : bold;
+}
+
+.school_span {
+	font-weight : bold;
+}
+
+.major_span {
+	font-weight : bold;
+}
+
+.country_span {
+	font-weight : bold;
+	line-height : 30px;
+}
+
+.case_school_div {
+	margin-top : 5px;
+}
+
+.case_school_div li {
+	font-size : 12px;
+	margin-top : 5px;
+	margin-left : 20px;
+	list-style-type : square;
+}
+
 .left_button {
 	width : 40px;
 	height : 80px;
-	display : block;
+	display : none;
 	cursor : pointer;
 	position : absolute;
 	left : -20px;
@@ -115,7 +79,7 @@ body {
 .right_button {
 	width : 40px;
 	height : 80px;
-	display : block;
+	display : none;
 	cursor : pointer;
 	position : absolute;
 	left : 980px;
@@ -125,11 +89,3 @@ body {
 }
 
 /************main div end*************/
-
-/************foot div start*************/
-.foot_div {
-	width : 100%;
-	font-size : 12px;
-	text-align : center;
-}
-/************foot div end*************/
