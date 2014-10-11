@@ -1,6 +1,7 @@
 <?php
 
 require_once dirname ( __FILE__ ) . '/../service/submitOrderService.class.php';
+require_once dirname ( __FILE__ ) . '/../service/mailService.class.php';
 require_once dirname ( __FILE__ ) . '/../tools/UniqueIdGenerator.class.php';
 
 	if( ! isset( $_POST['username'] ) ||
@@ -53,6 +54,10 @@ require_once dirname ( __FILE__ ) . '/../tools/UniqueIdGenerator.class.php';
 				$submitOrderService = new SubmitOrderService();
 				$submitOrderService->insertSubmitOrder($arr);
 				
+				// 发送邮件
+				$mailService = new MailService();
+				$mailService->sendOrderEmail($arr);
+				
 				echo "ok";
 				
 			}
@@ -76,6 +81,10 @@ require_once dirname ( __FILE__ ) . '/../tools/UniqueIdGenerator.class.php';
 			
 			$submitOrderService = new SubmitOrderService();
 			$submitOrderService->insertSubmitOrder($arr);
+			
+			// 发送邮件
+			$mailService = new MailService();
+			$mailService->sendOrderEmail($arr);
 			
 			echo "ok";
 			

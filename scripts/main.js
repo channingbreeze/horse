@@ -161,8 +161,7 @@
 			onStart : function(){
 			},
 			onComplete : function(data) {
-				console.log(data);
-				if(data == "ok") {
+				if(data.indexOf("ok") != -1) {
 					$('#freeDialog').css('display', 'none');
 					$('#back').css('display', 'none');
 					alert('提交成功！');

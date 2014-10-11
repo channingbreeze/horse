@@ -31,4 +31,6 @@
 	include_once 'partials/footer.php';
 ?>
 
+<script src="scripts/adminLogin.js"></script>
+
 </body>

@@ -18,5 +18,27 @@
 	width : 1000px;
 	height : 450px;
 	margin : 40px auto;
-	border : 1px solid blue;
+	font-size : 12px;
+	display : none;
+	border : 1px solid #F8F8F8;
+}
+
+.user_table_div {
+	margin-top : 20px;
+	width : 1000px;
+	height : 350px;
+}
+
+.user_page_div {
+	width : 1000px;
+	height : 50px;
+	text-align : center;
+}
+
+.user_table_div a {
+	text-decoration : none;
+}
+
+.panel_div table {
+	text-align : center;
 }
