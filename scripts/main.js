@@ -16,14 +16,8 @@
 	// 加载地图图钉
 	$.ajax({
 		url : 'inter/getPins.php',
+		dataType : 'json',
 		success : function(data){
-			
-			if(data.indexOf('<') != -1) {
-				data = JSON.parse(data.substring(0, data.indexOf('<')));
-			} else {
-				data = JSON.parse(data);
-			}
-			
 			for(i in data) {
 			
 				var myPolygon = new VEShape(VEShapeType.Pushpin, new VELatLong(data[i].longitude, data[i].latitude));
@@ -96,14 +90,8 @@
 			url : 'inter/getSchools.php',
 			method : 'post',
 			data : 'info=' + $(this).val(),
+			dataType : 'json',
 			success : function(data) {
-				
-				if(data.indexOf('<') != -1) {
-					data = JSON.parse(data.substring(0, data.indexOf('<')));
-				} else {
-					data = JSON.parse(data);
-				}
-				
 				var source = $('#schools-template').html();
 				var template = Handlebars.compile(source);
 				var html = template(data);
@@ -120,14 +108,8 @@
 			url : 'inter/getSchools.php',
 			method : 'post',
 			data : 'info=' + $('#searchInput').val(),
+			dataType : 'json',
 			success : function(data) {
-				
-				if(data.indexOf('<') != -1) {
-					data = JSON.parse(data.substring(0, data.indexOf('<')));
-				} else {
-					data = JSON.parse(data);
-				}
-				
 				var source = $('#schools-template').html();
 				var template = Handlebars.compile(source);
 				var html = template(data);
@@ -160,14 +142,8 @@
 			url : 'inter/getPinBySchoolId.php',
 			method : 'post',
 			data : 'id=' + $span.data().dir,
+			dataType : 'json',
 			success : function(data) {
-				
-				if(data.indexOf('<') != -1) {
-					data = JSON.parse(data.substring(0, data.indexOf('<')));
-				} else {
-					data = JSON.parse(data);
-				}
-				
 				map.SetCenterAndZoom(new VELatLong(data[0].longitude, data[0].latitude), 15);
 			}
 		});

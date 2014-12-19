@@ -2,14 +2,8 @@
 	
 	$.ajax({
 		url : 'inter/getTeamMembers.php',
+		dataType : 'json',
 		success : function(data) {
-			
-			if(data.indexOf('<') != -1) {
-				data = JSON.parse(data.substring(0, data.indexOf('<')));
-			} else {
-				data = JSON.parse(data);
-			}
-			
 			var source = $('#teamMembers-template').html();
 			var template = Handlebars.compile(source);
 			var html = template(data);

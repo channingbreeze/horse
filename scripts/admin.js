@@ -40,14 +40,8 @@
 			url : 'inter/getOrdersByPage.php',
 			method : 'post',
 			data : 'toPage=' + page,
+			dataType : 'json',
 			success : function(data) {
-				
-				if(data.indexOf('<') != -1) {
-					data = JSON.parse(data.substring(0, data.indexOf('<')));
-				} else {
-					data = JSON.parse(data);
-				}
-				
 				Handlebars.registerHelper("compare", function(v1, v2, options) {
 					if (v1 == v2) {
 						return options.fn(this);

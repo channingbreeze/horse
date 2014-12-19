@@ -5,14 +5,8 @@
 	
 	$.ajax({
 		url : 'inter/getCases.php',
+		dataType : 'json',
 		success : function(data) {
-			
-			if(data.indexOf('<') != -1) {
-				data = JSON.parse(data.substring(0, data.indexOf('<')));
-			} else {
-				data = JSON.parse(data);
-			}
-			
 			total = data.length;
 			$('.ul_wrap').css('width', (Math.ceil(total/2)*320) + 'px');
 			var source = $('#cases-template').html();

@@ -35,7 +35,7 @@ require_once dirname ( __FILE__ ) . '/../tools/UniqueIdGenerator.class.php';
 				$subfix = substr ( $_FILES['docfile']['name'] ,  $dot,  strlen ( $_FILES['docfile']['name'] ) -  $dot + 1 );
 				$target = $base_path . $uniqueId . $subfix;
 				move_uploaded_file($_FILES['docfile']['tmp_name'], $target);
-			var_dump($_FILES);	
+
 				$arr = array();
 				$arr['name'] = $_POST['username'];
 				$arr['school'] = $_POST['school'];
