@@ -41,8 +41,8 @@ class MailService {
 	public function sendOrderEmail($arr) {
 		
 		$emails = array();
-		//$emails[0] = "channingbreeze@163.com";
-		//$emails[1] = "alan_chow2010@126.com";
+		$emails[0] = "channingbreeze@163.com";
+		$emails[1] = "alan_chow2010@126.com";
 		
 		$attachments = array();
 		
