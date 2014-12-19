@@ -1,0 +1,44 @@
+.button_div {
+	margin : 30px auto;
+	width : 800px;
+	height : 50px;
+}
+
+.button_div button {
+	width : 80px;
+	height : 40px;
+	margin-top : 5px;
+	margin-left : 20px;
+	background-color : #F8D543;
+	font-size : 15px;
+	color : blue;
+}
+
+.panel_div {
+	width : 1000px;
+	height : 450px;
+	margin : 40px auto;
+	font-size : 12px;
+	display : none;
+	border : 1px solid #F8F8F8;
+}
+
+.user_table_div {
+	margin-top : 20px;
+	width : 1000px;
+	height : 350px;
+}
+
+.user_page_div {
+	width : 1000px;
+	height : 50px;
+	text-align : center;
+}
+
+.user_table_div a {
+	text-decoration : none;
+}
+
+.panel_div table {
+	text-align : center;
+}

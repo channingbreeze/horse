@@ -1,0 +1,42 @@
+/************main div start*************/
+.team_div {
+	margin : 10px auto;
+	width : 800px;
+	height : 550px;
+	border : 1px solid #F8F8F8;
+}
+
+.team_title {
+	width : 700px;
+	margin : 30px auto;
+	height : 140px;
+	font-size : 20px;
+	font-weight : bold;
+}
+
+.team_div li {
+	list-style-type : none;
+	width : 800px;
+	height : 100px;
+	display : block;
+	margin-top : 20px
+}
+
+#team_ul img {
+	border-radius : 50px;
+	float : left;
+}
+
+#team_ul .name_div {
+	font-weight : bold;
+	font-size : 20px;
+	margin-left : 150px;
+}
+
+#team_ul .content_div {
+	font-size : 12px;
+	margin-top : 10px;
+	margin-left : 150px;
+}
+
+/************main div end*************/

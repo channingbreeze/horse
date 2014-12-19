@@ -1,0 +1,91 @@
+/************main div start*************/
+.arrows_div {
+	position : relative;
+}
+
+.content_wrap {
+	margin-top : 10px;
+	margin-left : 10px;
+	width : 980px;
+	height : 550px;
+	overflow : hidden;
+}
+
+.ul_wrap {
+	margin-left : 0px;
+	width : 1000px;
+	height : 550px;
+}
+
+.case_li {
+	list-style-type : none;
+	width : 300px;
+	height : 200px;
+	background-color : #E8E8FF;
+	float : left;
+	margin-top : 50px;
+	margin-left : 20px;
+}
+
+.case_div {
+	width : 250px;
+	margin : 10px auto;
+}
+
+.name_span {
+	font-weight : bold;
+}
+
+.name_span {
+	font-weight : bold;
+}
+
+.school_span {
+	font-weight : bold;
+}
+
+.major_span {
+	font-weight : bold;
+}
+
+.country_span {
+	font-weight : bold;
+	line-height : 30px;
+}
+
+.case_school_div {
+	margin-top : 5px;
+}
+
+.case_school_div li {
+	font-size : 12px;
+	margin-top : 5px;
+	margin-left : 20px;
+	list-style-type : square;
+}
+
+.left_button {
+	width : 40px;
+	height : 80px;
+	display : none;
+	cursor : pointer;
+	position : absolute;
+	left : -20px;
+	top : 50%;
+	margin-top : -40px;
+	background-image : url("../images/left-arrow.png");
+}
+
+.right_button {
+	width : 40px;
+	height : 80px;
+	display : none;
+	cursor : pointer;
+	position : absolute;
+	left : 980px;
+	top : 50%;
+	margin-top : -40px;
+	background-image : url("../images/right-arrow.png");
+}
+
+/************main div end*************/
