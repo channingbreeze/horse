@@ -28,7 +28,7 @@ require_once dirname ( __FILE__ ) . '/../tools/UniqueIdGenerator.class.php';
 				// type = 1
 				
 				// 先接收文件
-				$base_path = "/../uploads/";
+				$base_path = "../uploads/";
 				$uniqueIdGenerator = new UniqueIdGenerator();
 				$uniqueId = $uniqueIdGenerator->getUniqueId();
 				$dot = strrpos ( $_FILES['docfile']['name'] ,  "." );
